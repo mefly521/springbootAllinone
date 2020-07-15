@@ -28,34 +28,14 @@ public class ExcelPoiTest {
         cellB2.setCellValue("单元格B2"); // B2单元格填充内容
         cellB3.setCellValue("单元格B3"); // B3单元格填充内容
 
-        HSSFCellStyle headStyle = workbook.createCellStyle(); // 单元格样式
-        Font headFontStyle = workbook.createFont(); // 字体样式
-        headFontStyle.setBold(true); // 加粗
-        headFontStyle.setFontName("黑体"); // 字体
-        headFontStyle.setFontHeightInPoints((short) 11); // 大小
-        // 将字体样式添加到单元格样式中
-        headStyle.setFont(headFontStyle);
-        headStyle.setAlignment(HorizontalAlignment.CENTER);// 居中
-        headStyle.setBorderBottom(BorderStyle.THIN);// 边框
-        headStyle.setBorderLeft(BorderStyle.THIN);
-        headStyle.setBorderRight(BorderStyle.THIN);
-        headStyle.setBorderTop(BorderStyle.THIN);
-        headStyle.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());//灰色
-        headStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-
-        HSSFCellStyle bodyStyle = workbook.createCellStyle(); // 单元格样式
-        bodyStyle.setAlignment(HorizontalAlignment.CENTER);// 居中
-        bodyStyle.setBorderBottom(BorderStyle.THIN);// 边框
-        bodyStyle.setBorderLeft(BorderStyle.THIN);
-        bodyStyle.setBorderRight(BorderStyle.THIN);
-        bodyStyle.setBorderTop(BorderStyle.THIN);
+        HSSFCellStyle headStyle = getHeadStyle(workbook);
+        HSSFCellStyle bodyStyle = getHssfCellStyle(workbook);
 
         cellB2.setCellStyle(headStyle); // 为B2单元格添加样式
-
-        writeHead(sheet,0, 0, 0, 10,"标题2",headStyle);
-        writeHead(sheet,1, 1, 0, 10,"标题1",headStyle);
-        for (int i = 2; i < 10 ; i++) {
-            writeBody(sheet,i, 0,"内容"+i,bodyStyle);
+        writeHead(sheet, 0, 0, 0, 10, "标题2", headStyle);
+        writeHead(sheet, 1, 1, 0, 10, "标题1", headStyle);
+        for (int i = 2; i < 10; i++) {
+            writeBody(sheet, i, 0, "内容" + i, bodyStyle);
         }
 
         // 输出到本地
@@ -78,7 +58,36 @@ public class ExcelPoiTest {
             out = null;
         }
     }
-    private static void writeBody(HSSFSheet sheet, int yIndex,int xIndex, String cellValue, CellStyle bodyStyle) {
+
+    private static HSSFCellStyle getHeadStyle(HSSFWorkbook workbook) {
+        HSSFCellStyle headStyle = workbook.createCellStyle(); // 单元格样式
+        Font headFontStyle = workbook.createFont(); // 字体样式
+        headFontStyle.setBold(true); // 加粗
+        headFontStyle.setFontName("黑体"); // 字体
+        headFontStyle.setFontHeightInPoints((short) 11); // 大小
+        // 将字体样式添加到单元格样式中
+        headStyle.setFont(headFontStyle);
+        headStyle.setAlignment(HorizontalAlignment.CENTER);// 居中
+        headStyle.setBorderBottom(BorderStyle.THIN);// 边框
+        headStyle.setBorderLeft(BorderStyle.THIN);
+        headStyle.setBorderRight(BorderStyle.THIN);
+        headStyle.setBorderTop(BorderStyle.THIN);
+        headStyle.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());//灰色
+        headStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        return headStyle;
+    }
+
+    private static HSSFCellStyle getHssfCellStyle(HSSFWorkbook workbook) {
+        HSSFCellStyle bodyStyle = workbook.createCellStyle(); // 单元格样式
+        bodyStyle.setAlignment(HorizontalAlignment.CENTER);// 居中
+        bodyStyle.setBorderBottom(BorderStyle.THIN);// 边框
+        bodyStyle.setBorderLeft(BorderStyle.THIN);
+        bodyStyle.setBorderRight(BorderStyle.THIN);
+        bodyStyle.setBorderTop(BorderStyle.THIN);
+        return bodyStyle;
+    }
+
+    private static void writeBody(HSSFSheet sheet, int yIndex, int xIndex, String cellValue, CellStyle bodyStyle) {
         Row row = sheet.createRow(yIndex);
         Cell cell = row.createCell(xIndex);
         cell.setCellValue(cellValue);
@@ -87,7 +96,7 @@ public class ExcelPoiTest {
 
     private static void writeHead(HSSFSheet sheet, int firstRow, int lastRow, int firstCol, int lastCol, String cellValue, CellStyle style) {
         // 合并单元格
-        CellRangeAddress cra =new CellRangeAddress(firstRow, lastRow, firstCol, lastCol); // 起始行, 终止行, 起始列, 终止列
+        CellRangeAddress cra = new CellRangeAddress(firstRow, lastRow, firstCol, lastCol); // 起始行, 终止行, 起始列, 终止列
         sheet.addMergedRegion(cra);
         Row row = sheet.createRow(firstRow);
         Cell cell = row.createCell(0);

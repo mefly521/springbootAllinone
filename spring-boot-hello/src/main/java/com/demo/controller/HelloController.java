@@ -11,7 +11,8 @@ public class HelloController {
         return "Hello Spring Boot 2.0!";
     }
     @RequestMapping("/test")
-    public Object test() {
+    public Object test() throws InterruptedException {
+        Thread.sleep(30_000);
         User user = new User();
         user.setUsername("mefly");
         return user;
