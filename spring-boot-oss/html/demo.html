@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>demo</title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+	</head>
+
+	<body >
+		<input type="file" name="photo" id="photo" value="" >
+		<button type="button" class="btn btn-success btn-lg" onclick="upload()" >上传</button>
+		<button type="button" class="btn btn-success btn-lg" onclick="downloadfile()">下载</button>
+		<div id="res"></div>
+	</body>
+	<script type="text/javascript">
+		function downloadfile() {
+			window.location.href =  "http://localhost:8083/download/oss?fileName=1578272106587-d2fdd709-9b16-48e4.png";
+		}
+		function upload(){
+			console.info(123);
+		    var formData = new FormData();
+		    formData.append("file",$("#photo")[0].files[0]);
+		    $.ajax({
+		        url:'http://localhost:8083/upload/oss', /*接口域名地址*/
+		        type:'post',
+		        data: formData,
+		        contentType: false,
+		        processData: false,
+		        success:function(res){
+		            console.log(res);
+		            if(res.data["code"]=="succ"){
+		                alert('成功');
+		            }else if(res.data["code"]=="err"){
+		                alert('失败');
+		            }else{
+		                console.log(res);
+		            }
+		        }
+		    })
+		}
+	</script>
+
+</html>
