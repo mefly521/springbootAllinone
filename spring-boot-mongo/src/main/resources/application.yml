@@ -1,0 +1,10 @@
+server:
+  port: 8089
+spring:
+  # 服务名称
+  application:
+    name: test-springboot-mongo
+  #数据库
+  data:
+    mongodb:
+      uri: mongodb://username:password@ip:27017/test
