@@ -1,6 +1,6 @@
 ### springboot 大合集，用就来取吧
 
-![image](https://github.com/mefly521/springbootAllinone/blob/master/readme-files/test.png)
+springboot 操作各种组件,都是些常用的中间件,就像干活时的工作箱, 需要用就来取吧,还想要哪些可以告诉我
 
 |   name  |   desc  |
 | --- | --- |
