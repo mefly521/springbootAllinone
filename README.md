@@ -22,3 +22,5 @@ springboot 操作各种组件,都是些常用的中间件,就像干活时的工�
 |  spring-boot-socket   |   socket学习   |
 |  spring-boot-spider   |   爬虫爬取网页信息   |
 |  spring-boot-schedule   |   定时执行   |
+|  spring-boot-pdf   |   生成word再转成pdf ,速度慢 |
+|  spring-boot-pdf-template   |   直接生成pdf,需要用Adobe Acrobat软件先编辑好pdf ,速度快  |
