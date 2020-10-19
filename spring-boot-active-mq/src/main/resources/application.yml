@@ -2,12 +2,9 @@ server:
   port: 8089
 spring:
   activemq:
-    #ActiveMQ通讯地址
     broker-url: tcp://xxx:61617
-    #用户名
-    user: admin
-    #密码
-    password: admin
+    user:
+    password:
     #是否启用内存模式（就是不安装MQ，项目启动时同时启动一个MQ实例）
     in-memory: false
     packages:
