@@ -1,0 +1,8 @@
+server:
+  port: 8083
+oss:
+  endpoint: 你的endpoint
+  url: 你的Bucket域名
+  accessKeyId: 你的accessKeyId
+  accessKeySecret: 你的accessKeySecret
+  bucketName: 你的bucketName

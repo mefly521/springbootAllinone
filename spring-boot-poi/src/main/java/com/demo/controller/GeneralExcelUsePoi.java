@@ -13,9 +13,10 @@ import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.RegionUtil;
 
 /**
+ * 生成excel
  * 单元格合并,背景颜色,边框的功能
  */
-public class ExcelPoiTest {
+public class GeneralExcelUsePoi {
 
     public static void main(String[] args) {
 

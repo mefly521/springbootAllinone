@@ -1,0 +1,14 @@
+#application.yml 配置如下：
+spring:
+  datasource:
+    url: jdbc:mysql://xxx:3306/test
+    username: xxx
+    password: xxx
+logging:
+  level:
+    com:
+      mmzs: debug
+#mybatis:
+#  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+#  type-aliases-package: com.mmzs.springboot.common.entities    # 所有Entity别名类所在包
+#  mapper-locations: classpath:mybatis/mapper/**/*.xml                       # mapper映射文件

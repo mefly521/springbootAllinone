@@ -1,0 +1,16 @@
+server:
+  port: 8089
+spring:
+  redis:
+    host: xxxx
+    port: 6379
+    timeout: 10000ms
+    maxIdle : 300
+    maxTotal: 1000
+    maxWaitMillis: 1000
+    minEvictableIdleTimeMillis : 300000
+    numTestsPerEvictionRun : 1024
+    timeBetweenEvictionRunsMillis : 30000
+    testOnBorrow : true
+    testWhileIdle : true
+    password: xxx

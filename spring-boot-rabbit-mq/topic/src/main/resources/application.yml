@@ -1,0 +1,13 @@
+server:
+  port: 8089
+spring:
+  rabbitmq:
+    host: xxx
+    port: 5672
+    username: guest
+    password: guest
+    #消息确认配置项
+    #确认消息已发送到交换机(Exchange)
+    publisher-confirms: true
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true

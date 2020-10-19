@@ -10,6 +10,9 @@ package com.demo.entity;
 
 import lombok.Data;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 返回数据
  *
