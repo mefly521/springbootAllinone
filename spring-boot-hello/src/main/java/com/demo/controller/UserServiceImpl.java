@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
  * @create 2020-07-30 16:25
  **/
 @Service
-public class UserService {
-
+public class UserServiceImple {
+	public void test(int i, int b){
+		System.out.println(i);
+	}
 }
