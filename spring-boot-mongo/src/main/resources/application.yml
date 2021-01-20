@@ -7,4 +7,4 @@ spring:
   #数据库
   data:
     mongodb:
-      uri: mongodb://username:password@ip:27017/test
+      uri: mongodb://elevatoruser:123456@dev.mongodb1:27017/ELEVATOR

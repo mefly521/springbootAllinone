@@ -22,6 +22,10 @@ public class CommonDao {
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
+	public List<LinkedHashMap> select() {
+		List<LinkedHashMap> apis = mongoTemplate.findAll(LinkedHashMap.class, "App");
+		return apis;
+	}
 
 	/**
 	 * 更新对象
