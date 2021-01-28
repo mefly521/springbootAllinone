@@ -1,9 +1,10 @@
-package com.demo.controller;
+package com.demo.mq;
 
-import com.alibaba.rocketmq.client.exception.MQClientException;
-import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
-import com.alibaba.rocketmq.client.producer.SendResult;
-import com.alibaba.rocketmq.common.message.Message;
+
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
+import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.common.message.Message;
 
 /**
  * @author mifei
@@ -12,13 +13,13 @@ import com.alibaba.rocketmq.common.message.Message;
 public class Producer {
 	public static void main(String[] args) throws MQClientException, InterruptedException {
 		DefaultMQProducer producer = new DefaultMQProducer("group_name");
-		producer.setNamesrvAddr("192.168.2.222:9876;192.168.2.223:9876");
+		producer.setNamesrvAddr("dev.rocketmq1:9876");
 		producer.start();
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 10; i++) {
 			try {
-				Message msg = new Message("TopicTest",              // topic
-						"TagA",                                     // tag
+				Message msg = new Message("testTopic_mifei",              // topic
+						"TagA", "abc"+i,                                // tag
 						("HelloWorld - RocketMQ" + i).getBytes()    // body
 				);
 				SendResult sendResult = producer.send(msg);

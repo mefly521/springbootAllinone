@@ -1,4 +1,4 @@
-package com.demo.mq;
+package com.demo.mq.push;
 
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
@@ -33,16 +33,16 @@ public class Consumer {
 			@Override
 			public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
 				System.out.println(msgs.size());
-//				for (MessageExt msg: msgs) {
-//					try {
-//						String topic = msg.getTopic();
-//						String tags = msg.getTags();
-//						String msgBody = new String(msg.getBody(),"utf-8");
-//						System.out.println("收到消息--" + " topic:" + topic + " ,tags:" + tags + " ,msg:" +msgBody);
-//					} catch (UnsupportedEncodingException e) {
-//						e.printStackTrace();
-//					}
-//				}
+				for (MessageExt msg: msgs) {
+					try {
+						String topic = msg.getTopic();
+						String tags = msg.getTags();
+						String msgBody = new String(msg.getBody(),"utf-8");
+						System.out.println("收到消息--" + " topic:" + topic + " ,tags:" + tags + " ,msg:" +msgBody);
+					} catch (UnsupportedEncodingException e) {
+						e.printStackTrace();
+					}
+				}
 				return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
 			}
 		});

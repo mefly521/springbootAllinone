@@ -23,5 +23,19 @@ public class CommonDaoTest {
 	public void update() throws Exception {
 		List<LinkedHashMap> apis = commonDao.select();
     }
+	/**
+	 * 使用 mongoTemplate 的java代码进行聚合查询
+	 */
+	@Test
+	public void aggregationUseMongoTemplate() throws Exception {
+		commonDao.aggregationUseMongoTemplate();
+	}
 
+	/**
+	 * 使用 mongo compass 自动生成的java代码进行聚合查询
+	 */
+	@Test
+	public void aggregationFromCompass() throws Exception {
+		commonDao.aggregationFromCompass();
+	}
 }
