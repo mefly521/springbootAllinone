@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
  * @author mifei
  * @create 2020-07-30 16:25
  **/
-@Service
-public class UserServiceImpl implements UserService {
+@Service("userMongoService")
+public class UserMongoServiceImpl implements UserService {
 
 	private String name;
 
@@ -17,12 +17,10 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 测试方法
-	 *
-	 * @param c
 	 */
 	@Override
-	public void test(int c) {
-		System.out.println("hello " + this.name);
+	public void test() {
+		System.out.println("hello mongo: " + this.name);
 	}
 
 
