@@ -1,12 +1,10 @@
-package com.demo;
+package com.demo.controller;
 
-import jdk.nashorn.internal.ir.annotations.Reference;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import com.demo.TestService;
+import demo.service.TestService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 /**
  * @author mifei
  * @create 2021-01-13 16:49
@@ -14,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-	//    @Resource
-//    private TestService testServiceImpl;
 	@Reference(version = "1.0.0")
 	private TestService testServiceImpl;
 

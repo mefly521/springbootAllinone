@@ -36,6 +36,18 @@ public class CommonDaoTest {
 	 */
 	@Test
 	public void aggregationFromCompass() throws Exception {
-		commonDao.aggregationFromCompass();
+		commonDao.faultSumByMonth("5aaf772c268a2ae53c7d5f5b",0,0);
+	}
+	@Test
+	public void trappedPersonSumByMonth() throws Exception {
+		commonDao.trappedPersonSumByMonth("5aaf772c268a2ae53c7d5f5b",0,0);
+	}
+	@Test
+	public void declareStatGroupByTeamByMonth() throws Exception {
+
+	}
+	@Test
+	public void test() throws Exception {
+		commonDao.test("5aaf772c268a2ae53c7d5f5b",0,0);
 	}
 }

@@ -1,4 +1,5 @@
-package com.demo.controller;
+package com.demo.entity;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
@@ -8,6 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import lombok.Data;
+
 //通过这个注解，可以不用写gettersetter方法
 @Data
 //通过这个注解可以声明一个文档，指定其所在的索引库和type

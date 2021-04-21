@@ -1,0 +1,7 @@
+server:
+  port: 8088
+spring:
+  data:
+    elasticsearch:
+      cluster-name: bit
+      cluster-nodes: dev.es1:9300

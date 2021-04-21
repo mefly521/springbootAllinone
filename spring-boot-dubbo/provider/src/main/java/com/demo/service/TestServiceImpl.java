@@ -1,5 +1,6 @@
 package com.demo.service;
 
+import demo.service.TestService;
 import org.apache.dubbo.config.annotation.Service;
 /**
  * @author mifei

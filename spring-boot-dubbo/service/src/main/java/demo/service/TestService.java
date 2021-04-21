@@ -1,4 +1,4 @@
-package com.demo.service;
+package demo.service;
 
 public interface TestService {
 	void ins();
